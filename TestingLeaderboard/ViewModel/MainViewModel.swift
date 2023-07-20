@@ -65,6 +65,23 @@ final class MainViewModel: NSObject, ObservableObject, UINavigationControllerDel
         rootViewController?.present(gcViewController, animated: true)
     }
     
+    func getAchievement(){
+        // Getting an achievement by its identifier
+        let achievement = GKAchievement(identifier: "firstButtonClicked")
+        // Unlocking and showing banner
+        achievement.percentComplete = 100 // 0 - 100
+        achievement.showsCompletionBanner = true
+        GKAchievement.report([achievement]) { error in
+            // if there's no error
+            guard error == nil else {
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            // Show something to the user!
+            print("Something nice :)")
+        }
+    }
+    
     
 }
 
