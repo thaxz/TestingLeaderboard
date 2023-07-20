@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 40){
             Button("Show Achievements") {
-                
+                viewModel.authenticateUser()
             }
             .buttonStyle(.borderedProminent)
             Button("Show Leaderboard") {

@@ -23,7 +23,10 @@ final class MainViewModel: ObservableObject {
         // Getting back viewController or error
         player.authenticateHandler = { [self] viewController, error in
             // If there's an error
-            guard error == nil else {return}
+            guard error == nil else {
+                print(error?.localizedDescription)
+                return
+            }
             // If there's no error and there is a viewcontroller, showing viewcontroller
             if let viewController = viewController {
                 rootViewController?.present(viewController, animated: true)
