@@ -10,6 +10,8 @@ import GameKit
 
 final class MainViewModel: ObservableObject {
     
+    @Published var playerAuthState: AuthStates = .authenticating
+    
     // Since we're using SwiftUI, creating viewcontroller
     var rootViewController: UIViewController? {
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
@@ -24,6 +26,7 @@ final class MainViewModel: ObservableObject {
         player.authenticateHandler = { [self] viewController, error in
             // If there's an error
             guard error == nil else {
+                playerAuthState = .error
                 print(error?.localizedDescription ?? "not found")
                 return
             }
@@ -31,6 +34,17 @@ final class MainViewModel: ObservableObject {
             if let viewController = viewController {
                 rootViewController?.present(viewController, animated: true)
                 return
+            }
+            
+            // (Optional) Checking if the player's allowed to play multiplayer games
+            if player.isAuthenticated {
+                if player.isMultiplayerGamingRestricted {
+                    playerAuthState = .restricted
+                } else {
+                    playerAuthState = .authenticaded
+                }
+            } else {
+                playerAuthState = .unauthenticated
             }
         }
     }

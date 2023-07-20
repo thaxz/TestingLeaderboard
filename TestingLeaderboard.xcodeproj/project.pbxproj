@@ -12,6 +12,7 @@
 		E928F19C2A69C0EC0016C9D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E928F19B2A69C0EC0016C9D4 /* Assets.xcassets */; };
 		E928F19F2A69C0EC0016C9D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E928F19E2A69C0EC0016C9D4 /* Preview Assets.xcassets */; };
 		E928F1A62A69C2710016C9D4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928F1A52A69C2710016C9D4 /* MainViewModel.swift */; };
+		E928F1AC2A69C8FF0016C9D4 /* AuthStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928F1AB2A69C8FF0016C9D4 /* AuthStates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E928F19E2A69C0EC0016C9D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E928F1A52A69C2710016C9D4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		E928F1A72A69C6DB0016C9D4 /* TestingLeaderboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestingLeaderboard.entitlements; sourceTree = "<group>"; };
+		E928F1AB2A69C8FF0016C9D4 /* AuthStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +56,11 @@
 		E928F1962A69C0EB0016C9D4 /* TestingLeaderboard */ = {
 			isa = PBXGroup;
 			children = (
-				E928F1A72A69C6DB0016C9D4 /* TestingLeaderboard.entitlements */,
 				E928F1972A69C0EB0016C9D4 /* TestingLeaderboardApp.swift */,
-				E928F1992A69C0EB0016C9D4 /* MainView.swift */,
-				E928F1A52A69C2710016C9D4 /* MainViewModel.swift */,
+				E928F1A92A69C8D00016C9D4 /* ViewModel */,
+				E928F1A82A69C8C80016C9D4 /* Views */,
+				E928F1AA2A69C8EF0016C9D4 /* Enums */,
+				E928F1A72A69C6DB0016C9D4 /* TestingLeaderboard.entitlements */,
 				E928F19B2A69C0EC0016C9D4 /* Assets.xcassets */,
 				E928F19D2A69C0EC0016C9D4 /* Preview Content */,
 			);
@@ -70,6 +73,30 @@
 				E928F19E2A69C0EC0016C9D4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E928F1A82A69C8C80016C9D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E928F1992A69C0EB0016C9D4 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E928F1A92A69C8D00016C9D4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E928F1A52A69C2710016C9D4 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E928F1AA2A69C8EF0016C9D4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				E928F1AB2A69C8FF0016C9D4 /* AuthStates.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E928F19A2A69C0EB0016C9D4 /* MainView.swift in Sources */,
+				E928F1AC2A69C8FF0016C9D4 /* AuthStates.swift in Sources */,
 				E928F1982A69C0EB0016C9D4 /* TestingLeaderboardApp.swift in Sources */,
 				E928F1A62A69C2710016C9D4 /* MainViewModel.swift in Sources */,
 			);
