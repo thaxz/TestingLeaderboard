@@ -21,8 +21,11 @@ struct MainView: View {
             Button("Unlock Achievement") {
                 viewModel.getAchievement(achievement: "firstButtonClicked")
             }.buttonStyle(.borderedProminent)
+            Button("Taylor Swift") {
+                viewModel.getAchievement(achievement: "artistOfTheDecade")
+            }.buttonStyle(.borderedProminent)
             Button("Sumit Score") {
-                
+                viewModel.submitScore(score: 10, forLeaderboardID: "myrandomstuff")
             }.buttonStyle(.borderedProminent)
         }
         .padding(20)

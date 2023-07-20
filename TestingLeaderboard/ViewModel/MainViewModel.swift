@@ -82,6 +82,15 @@ final class MainViewModel: NSObject, ObservableObject, UINavigationControllerDel
         }
     }
     
+    func submitScore(score: Int, forLeaderboardID id: String){
+        //test
+        GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [id]) { error in
+            guard error == nil else {
+                print(error?.localizedDescription ?? "")
+                return
+            }
+        }
+    }
     
     
     
