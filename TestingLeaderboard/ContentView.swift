@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = MainViewModel()
     var body: some View {
         VStack(spacing: 40){
             Button("Show Achievements") {
@@ -25,6 +26,9 @@ struct ContentView: View {
             }.buttonStyle(.borderedProminent)
         }
         .padding(20)
+        .onAppear{
+            viewModel.authenticateUser()
+        }
     }
 }
 
