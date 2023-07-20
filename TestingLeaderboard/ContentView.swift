@@ -9,10 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-           Button
+        VStack(spacing: 40){
+            Button("Show Achievements") {
+                
+            }
+            .buttonStyle(.borderedProminent)
+            Button("Show Leaderboard") {
+                
+            }.buttonStyle(.borderedProminent)
+            Button("Unlock Achievement") {
+                
+            }.buttonStyle(.borderedProminent)
+            Button("Sumit Score") {
+                
+            }.buttonStyle(.borderedProminent)
         }
-        .padding()
+        .padding(20)
     }
 }
 
