@@ -19,7 +19,7 @@ struct MainView: View {
                 viewModel.showLeaderboard()
             }.buttonStyle(.borderedProminent)
             Button("Unlock Achievement") {
-                viewModel.getAchievement()
+                viewModel.getAchievement(achievement: "firstButtonClicked")
             }.buttonStyle(.borderedProminent)
             Button("Sumit Score") {
                 
