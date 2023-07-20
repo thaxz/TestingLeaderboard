@@ -8,7 +8,7 @@
 import Foundation
 import GameKit
 
-final class MainViewModel: ObservableObject {
+final class MainViewModel: NSObject, ObservableObject, UINavigationControllerDelegate {
     
     @Published var playerAuthState: AuthStates = .authenticating
     
@@ -47,6 +47,15 @@ final class MainViewModel: ObservableObject {
                 playerAuthState = .unauthenticated
             }
         }
+    }
+    
+    // Show achievements
+    func showAchievements(){
+        // Creating a view controller to the GC's Achievements
+        let gcViewController = GKGameCenterViewController(state: .achievements)
+        gcViewController.delegate = self
+        rootViewController?.present(gcViewController, animated: true)
+        
     }
     
     
