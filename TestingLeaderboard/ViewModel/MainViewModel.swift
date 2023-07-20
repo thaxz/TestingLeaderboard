@@ -58,6 +58,13 @@ final class MainViewModel: NSObject, ObservableObject, UINavigationControllerDel
         
     }
     
+    func showLeaderboard(){
+        // Creating a view controller to the GC's Leaderboard
+        let gcViewController = GKGameCenterViewController(leaderboardID: "myrandomstuff", playerScope: .global, timeScope: .allTime)
+        gcViewController.delegate = self
+        rootViewController?.present(gcViewController, animated: true)
+    }
+    
     
 }
 

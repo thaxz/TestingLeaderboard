@@ -12,11 +12,11 @@ struct MainView: View {
     var body: some View {
         VStack(spacing: 40){
             Button("Show Achievements") {
-                viewModel.authenticateUser()
+                viewModel.showAchievements()
             }
             .buttonStyle(.borderedProminent)
             Button("Show Leaderboard") {
-                
+                viewModel.showLeaderboard()
             }.buttonStyle(.borderedProminent)
             Button("Unlock Achievement") {
                 
