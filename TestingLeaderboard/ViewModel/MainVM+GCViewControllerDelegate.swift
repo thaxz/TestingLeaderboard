@@ -10,7 +10,7 @@ import GameKit
 
 // Extending to access GC's methods
 extension MainViewModel: GKGameCenterControllerDelegate {
-    
+    //TODO: Coordinator to dismiss
     // Dismiss when finished
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true)

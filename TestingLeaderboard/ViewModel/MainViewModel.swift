@@ -82,6 +82,7 @@ final class MainViewModel: NSObject, ObservableObject, UINavigationControllerDel
         }
     }
     
+    //TODO: Make it report more than once
     func submitScore(score: Int, forLeaderboardID id: String){
         //test
         GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [id]) { error in
