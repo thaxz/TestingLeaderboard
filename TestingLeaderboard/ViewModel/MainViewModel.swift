@@ -16,12 +16,6 @@ final class MainViewModel: NSObject, ObservableObject, UINavigationControllerDel
     @AppStorage("GKGameCenterViewControllerState") var gameCenterViewControllerState:GKGameCenterViewControllerState = .default
     @AppStorage("IsGameCenterActive") var isGKActive: Bool = false
     
-    // Since we're using SwiftUI, creating viewcontroller
-    var rootViewController: UIViewController? {
-        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        return windowScene?.windows.first?.rootViewController
-    }
-    
     // Authenticate user
     func authenticateUser(){
         // Getting local player
@@ -32,11 +26,6 @@ final class MainViewModel: NSObject, ObservableObject, UINavigationControllerDel
             guard error == nil else {
                 playerAuthState = .error
                 print(error?.localizedDescription ?? "not found")
-                return
-            }
-            // If there's no error and there is a viewcontroller, showing viewcontroller
-            if let viewController = viewController {
-                rootViewController?.present(viewController, animated: true)
                 return
             }
             
@@ -55,26 +44,14 @@ final class MainViewModel: NSObject, ObservableObject, UINavigationControllerDel
     
     // Show achievements
     func showAchievements(){
-        gameCenterViewControllerState = .leaderboards
+        gameCenterViewControllerState = .achievements
         isGKActive = true
-        
-        // Creating a view controller to the GC's Achievements
-//        let gcViewController = GKGameCenterViewController(state: .achievements)
-//        gcViewController.delegate = self
-//        rootViewController?.present(gcViewController, animated: true)
-        
     }
     
     func showLeaderboard(){
         // Creating a view controller to the GC's Leaderboard
         gameCenterViewControllerState = .leaderboards
         isGKActive = true
-        
-        
-//        let gcViewController = GKGameCenterViewController(leaderboardID: "myrandomstuff", playerScope: .global, timeScope: .allTime)
-//        gcViewController.delegate = self
- //       rootViewController?.present(gcViewController, animated: true)
-
     }
     
     func getAchievement(achievement bundle: String){

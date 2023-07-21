@@ -42,6 +42,7 @@ public class GKCoordinator: NSObject, GKGameCenterControllerDelegate {
 
     public func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         view.isGKActive = false
+        print("chega aqui")
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }
 }
