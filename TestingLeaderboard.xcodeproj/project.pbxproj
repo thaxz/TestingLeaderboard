@@ -14,6 +14,7 @@
 		E928F1A62A69C2710016C9D4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928F1A52A69C2710016C9D4 /* MainViewModel.swift */; };
 		E928F1AC2A69C8FF0016C9D4 /* AuthStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928F1AB2A69C8FF0016C9D4 /* AuthStates.swift */; };
 		E928F1AE2A69CE280016C9D4 /* MainVM+GCViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E928F1AD2A69CE280016C9D4 /* MainVM+GCViewControllerDelegate.swift */; };
+		E9302ECA2A69FF09009210B9 /* GameCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9302EC92A69FF09009210B9 /* GameCenterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E928F1A72A69C6DB0016C9D4 /* TestingLeaderboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestingLeaderboard.entitlements; sourceTree = "<group>"; };
 		E928F1AB2A69C8FF0016C9D4 /* AuthStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStates.swift; sourceTree = "<group>"; };
 		E928F1AD2A69CE280016C9D4 /* MainVM+GCViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVM+GCViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		E9302EC92A69FF09009210B9 /* GameCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E928F1992A69C0EB0016C9D4 /* MainView.swift */,
+				E9302EC92A69FF09009210B9 /* GameCenterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				E928F19A2A69C0EB0016C9D4 /* MainView.swift in Sources */,
 				E928F1AC2A69C8FF0016C9D4 /* AuthStates.swift in Sources */,
 				E928F1982A69C0EB0016C9D4 /* TestingLeaderboardApp.swift in Sources */,
+				E9302ECA2A69FF09009210B9 /* GameCenterView.swift in Sources */,
 				E928F1AE2A69CE280016C9D4 /* MainVM+GCViewControllerDelegate.swift in Sources */,
 				E928F1A62A69C2710016C9D4 /* MainViewModel.swift in Sources */,
 			);

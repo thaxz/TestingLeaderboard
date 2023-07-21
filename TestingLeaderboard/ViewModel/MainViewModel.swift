@@ -7,10 +7,14 @@
 
 import Foundation
 import GameKit
+import SwiftUI
 
 final class MainViewModel: NSObject, ObservableObject, UINavigationControllerDelegate {
     
     @Published var playerAuthState: AuthStates = .authenticating
+    
+    @AppStorage("GKGameCenterViewControllerState") var gameCenterViewControllerState:GKGameCenterViewControllerState = .default
+    @AppStorage("IsGameCenterActive") var isGKActive: Bool = false
     
     // Since we're using SwiftUI, creating viewcontroller
     var rootViewController: UIViewController? {
@@ -51,18 +55,26 @@ final class MainViewModel: NSObject, ObservableObject, UINavigationControllerDel
     
     // Show achievements
     func showAchievements(){
+        gameCenterViewControllerState = .leaderboards
+        isGKActive = true
+        
         // Creating a view controller to the GC's Achievements
-        let gcViewController = GKGameCenterViewController(state: .achievements)
-        gcViewController.delegate = self
-        rootViewController?.present(gcViewController, animated: true)
+//        let gcViewController = GKGameCenterViewController(state: .achievements)
+//        gcViewController.delegate = self
+//        rootViewController?.present(gcViewController, animated: true)
         
     }
     
     func showLeaderboard(){
         // Creating a view controller to the GC's Leaderboard
-        let gcViewController = GKGameCenterViewController(leaderboardID: "myrandomstuff", playerScope: .global, timeScope: .allTime)
-        gcViewController.delegate = self
-        rootViewController?.present(gcViewController, animated: true)
+        gameCenterViewControllerState = .leaderboards
+        isGKActive = true
+        
+        
+//        let gcViewController = GKGameCenterViewController(leaderboardID: "myrandomstuff", playerScope: .global, timeScope: .allTime)
+//        gcViewController.delegate = self
+ //       rootViewController?.present(gcViewController, animated: true)
+
     }
     
     func getAchievement(achievement bundle: String){

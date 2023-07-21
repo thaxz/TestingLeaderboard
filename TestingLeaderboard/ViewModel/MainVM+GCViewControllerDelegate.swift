@@ -14,11 +14,7 @@ extension MainViewModel: GKGameCenterControllerDelegate {
     // Dismiss when finished
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true)
+        print("TENTANDO")
     }
-    
-    
-    
-
-    
     
 }

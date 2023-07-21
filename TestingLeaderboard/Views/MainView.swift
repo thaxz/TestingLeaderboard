@@ -6,31 +6,38 @@
 //
 
 import SwiftUI
+import GameKit
 
 struct MainView: View {
     @StateObject var viewModel = MainViewModel()
+    
+    
     var body: some View {
-        VStack(spacing: 40){
-            Button("Show Achievements") {
-                viewModel.showAchievements()
+        if viewModel.isGKActive {
+            GameCenterView(format: viewModel.gameCenterViewControllerState)
+        } else {
+            VStack(spacing: 40){
+                Button("Show Achievements") {
+                    viewModel.showAchievements()
+                }
+                .buttonStyle(.borderedProminent)
+                Button("Show Leaderboard") {
+                    viewModel.showLeaderboard()
+                }.buttonStyle(.borderedProminent)
+                Button("Unlock Achievement") {
+                    viewModel.getAchievement(achievement: "firstButtonClicked")
+                }.buttonStyle(.borderedProminent)
+                Button("Taylor Swift") {
+                    viewModel.getAchievement(achievement: "artistOfTheDecade")
+                }.buttonStyle(.borderedProminent)
+                Button("Sumit Score") {
+                    viewModel.submitScore(score: 10, forLeaderboardID: "myrandomstuff")
+                }.buttonStyle(.borderedProminent)
             }
-            .buttonStyle(.borderedProminent)
-            Button("Show Leaderboard") {
-                viewModel.showLeaderboard()
-            }.buttonStyle(.borderedProminent)
-            Button("Unlock Achievement") {
-                viewModel.getAchievement(achievement: "firstButtonClicked")
-            }.buttonStyle(.borderedProminent)
-            Button("Taylor Swift") {
-                viewModel.getAchievement(achievement: "artistOfTheDecade")
-            }.buttonStyle(.borderedProminent)
-            Button("Sumit Score") {
-                viewModel.submitScore(score: 10, forLeaderboardID: "myrandomstuff")
-            }.buttonStyle(.borderedProminent)
-        }
-        .padding(20)
-        .onAppear{
-            viewModel.authenticateUser()
+            .padding(20)
+            .onAppear{
+                viewModel.authenticateUser()
+            }
         }
     }
 }
